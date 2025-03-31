@@ -1,7 +1,6 @@
 "use client";
 
-import { IS_GTM_ENABLED, trackingConfig } from "./config.tracking";
-import { GtagEvent } from "./types.tracking";
+import { IS_GTM_ENABLED } from "./config.tracking";
 
 const logGAWarning = (message: string) => {
     console.warn(message);
@@ -17,16 +16,6 @@ const getGtag = () => {
         throw new Error("GTag does not exist");
     }
     return window.gtag;
-};
-
-export const sendGAEvent = (event: GtagEvent) => {
-    const gtag = getGtag();
-    if (!gtag) return;
-    gtag("event", event.action, {
-        event_category: event.category,
-        event_label: event.label,
-        value: event.value,
-    });
 };
 
 export const grantConsentForEverything = () => {
