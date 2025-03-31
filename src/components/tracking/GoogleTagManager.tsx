@@ -14,7 +14,6 @@ export const GoogleTagManager = () => {
     useEffect(() => {
         if (isGtagLoaded && !hasSetConsent) {
 
-            console.log(trackingConfig)
             // Get historic consent value
             const consent = getCookieConsentValue(
                 trackingConfig.cookieBannerCookieName
