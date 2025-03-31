@@ -1,12 +1,16 @@
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col row-start-2 items-center sm:items-start">
-        <h1 className="text-2xl">Jonathan La Mela</h1>
-        <h2>Work in progress...</h2>
-      </main>
-
-    </div>
+    <main className="flex flex-col flex-grow justify-center items-center px-16">
+      <h1 className="text-4xl">Jonathan La Mela</h1>
+      <div className="divider"></div>
+      <div className="flex flex-col space-x-2 space-y-2 text-center">
+        <h2 className="text-2xl">Mobile apps</h2>
+        <div className="flex flex-row items-center justify-center">
+          <Link className="btn" href="/mobile-apps/crittoutil">CrittoUtil</Link>
+        </div>
+      </div>
+    </main>
   );
 }

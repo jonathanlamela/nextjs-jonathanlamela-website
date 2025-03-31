@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Jonathan La Mela - Official Website",
@@ -22,11 +13,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="flex flex-grow h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="antialiased flex flex-grow "
       >
-        {children}
+        <div className="flex flex-grow bg-gray-100 p-16 shadow-xl">
+          <div className="bg-white flex flex-grow">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
