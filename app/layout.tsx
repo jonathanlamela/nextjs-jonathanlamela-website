@@ -17,7 +17,7 @@ export default function RootLayout({
       <body
         className="antialiased flex flex-grow "
       >
-        <div className="flex flex-grow bg-gray-100 p-16 shadow-xl">
+        <div className="flex flex-grow bg-gray-100">
           <div className="bg-white flex flex-grow">
             {children}
           </div>
