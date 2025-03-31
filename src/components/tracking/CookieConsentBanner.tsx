@@ -1,6 +1,6 @@
 'use client';
-import { trackingConfig } from "@/src/config.tracking";
-import { grantConsentForEverything } from "@/src/util.tracking";
+import { trackingConfig } from "@/src/libs/tracking/config.tracking";
+import { grantConsentForEverything } from "@/src/libs/tracking/util.tracking";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";

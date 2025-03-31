@@ -1,7 +1,6 @@
 'use client'
 
-import { markFeatureUsage, pageview } from '@/src/util.tracking'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { markFeatureUsage } from '@/src/libs/tracking/util.tracking'
 import Script from 'next/script'
 import { FC, useEffect } from 'react'
 
@@ -14,14 +13,7 @@ export const GoogleTagManagerScripts: FC<Props> = ({
     gaId,
     onLoadCallback,
 }) => {
-    const pathname = usePathname()
-    const searchParams = useSearchParams()
 
-    // Track pageview on route change
-    useEffect(() => {
-        const url = pathname + searchParams.toString()
-        pageview(url)
-    }, [pathname, searchParams])
 
     useEffect(() => {
         markFeatureUsage('google_analytics_tag')

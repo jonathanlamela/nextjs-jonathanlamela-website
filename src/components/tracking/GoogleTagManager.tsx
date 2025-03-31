@@ -3,8 +3,8 @@
 import { Suspense, useEffect, useState } from 'react'
 import { getCookieConsentValue } from 'react-cookie-consent'
 import { GoogleTagManagerScripts } from './GoogleTagManagerScripts'
-import { trackingConfig } from '@/src/config.tracking'
-import { grantConsentForEverything } from '@/src/util.tracking'
+import { trackingConfig } from '@/src/libs/tracking/config.tracking'
+import { grantConsentForEverything } from '@/src/libs/tracking/util.tracking'
 
 export const GoogleTagManager = () => {
     const [isGtagLoaded, setIsGtagLoaded] = useState(false)
@@ -18,7 +18,6 @@ export const GoogleTagManager = () => {
             const consent = getCookieConsentValue(
                 trackingConfig.cookieBannerCookieName
             )
-
 
             if (consent === 'true') {
                 grantConsentForEverything()

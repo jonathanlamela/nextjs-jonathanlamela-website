@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { IS_GTM_ENABLED } from "@/src/config.tracking";
+import { IS_GTM_ENABLED } from "@/src/libs/tracking/config.tracking";
 import { GoogleTagManager } from "@/src/components/tracking/GoogleTagManager";
 import CookieConsentBanner from "@/src/components/tracking/CookieConsentBanner";
 
