@@ -47,9 +47,9 @@ export default function Home() {
         <p className="text-lg text-center text-gray-600 dark:text-gray-400 md:text-lg">
           Benvenuto sul mio sito web, qui potrai trovare informazioni su cosa faccio e alcuni link ai miei progetti.
         </p>
-        <div className="w-full text-center">
+        <div className="w-full text-center space-x-2">
           <Link
-            className="inline-flex items-center px-5 py-3 text-sm font-medium text-gray-300 transition duration-300 bg-black rounded hover:bg-gray-800 dark:hover:bg-gray-200 dark:text-gray-700 dark:bg-white"
+            className="inline-flex items-center px-5 py-3 text-sm font-medium btn btn-outline btn-info"
             aria-label="learn more"
             rel="noreferrer"
             target="_blank" href={"https://github.com/jonathanlamela"}
@@ -57,10 +57,10 @@ export default function Home() {
             GitHub
           </Link>
           <Link
-            className="inline-flex items-center px-5 py-3 text-sm font-medium text-gray-300 transition duration-300 bg-blue-900 rounded hover:bg-blue-700 dark:hover:bg-gray-200 dark:text-gray-700 dark:bg-white"
+            className="inline-flex items-center px-5 py-3 text-sm font-medium btn btn-outline btn-secondary"
             aria-label="learn more"
             rel="noreferrer"
-            target="_blank" href={"www.linkedin.com/in/jonathan-la-mela-29119645"}
+            target="_blank" href={"https://www.linkedin.com/in/jonathan-la-mela-29119645"}
           >
             Linkedin
           </Link>
@@ -70,8 +70,8 @@ export default function Home() {
       <div className="w-full flex flex-col space-y-4">
         <h2 className="text-2xl font-semibold text-center">Skills</h2>
         <div className="flex flex-row justify-center">
-          <div className="flex-wrap w-100 space-x-2 space-y-2">
-            {skills.map((skill: string) => <div key={skill} className="badge badge-ghost">{skill}</div>)}
+          <div className="flex-wrap w-100 space-x-2 space-y-2 text-center">
+            {skills.map((skill: string) => <div key={skill} className="badge badge-ghost hover:bg-gray-600 hover:text-white">{skill}</div>)}
           </div>
         </div>
       </div>
