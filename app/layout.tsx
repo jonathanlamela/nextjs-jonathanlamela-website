@@ -5,6 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Jonathan La Mela - Official Website",
+  description: "Sviluppatore fullstack"
 };
 
 export default function RootLayout({
