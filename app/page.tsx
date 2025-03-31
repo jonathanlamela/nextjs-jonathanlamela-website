@@ -107,6 +107,13 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <div className="w-full flex flex-col space-y-4">
+        <h2 className="text-sm font-semibold text-center">Questo sito</h2>
+        <div className="flex flex-col justify-center items-center">
+          <Link href={"/privacy-policy/web"}>Privacy policy</Link>
+        </div>
+
+      </div>
     </main>
   );
 }

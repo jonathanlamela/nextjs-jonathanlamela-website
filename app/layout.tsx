@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { IS_GTM_ENABLED } from "@/src/config.tracking";
+import { GoogleTagManager } from "@/src/components/tracking/GoogleTagManager";
+import CookieConsentBanner from "@/src/components/tracking/CookieConsentBanner";
 
 
 
@@ -23,6 +26,9 @@ export default function RootLayout({
             {children}
           </div>
         </div>
+        {IS_GTM_ENABLED && <GoogleTagManager />}
+
+        <CookieConsentBanner></CookieConsentBanner>
       </body>
     </html>
   );
