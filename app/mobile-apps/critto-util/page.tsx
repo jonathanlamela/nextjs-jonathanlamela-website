@@ -8,7 +8,6 @@ export default function Home() {
         <Link className="text-xl" href={""}>Google Playstore</Link>
         <Link className="text-xl" href={"./privacy-policy"}>Privacy Policy App</Link>
       </main>
-
     </div>
   );
 }
