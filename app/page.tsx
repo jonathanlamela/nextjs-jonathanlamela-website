@@ -1,6 +1,39 @@
 import Link from "next/link";
 
 export default function Home() {
+
+  const webapps = [
+    { title: "www.tonerfast24.it", link: "https://www.tonerfast24.it" },
+    { title: "www.ldc.it", link: "https://www.ldc.it" },
+    { title: "www.4deco.it", link: "https://www.4deco.it" },
+    { title: "www.imusicfun.it", link: "https://www.imusicfun.it" },
+  ];
+
+  const skills = [
+    "Python",
+    "C#",
+    "Go",
+    "Java",
+    "C++",
+    "Rust",
+    "Visual Basic",
+    "Ruby",
+    "Laravel",
+    "Spring Boot",
+    "Tailwind",
+    "Flutter",
+    "Docker",
+    "Kubernetes",
+    "VueJs",
+    "Angular",
+    "TypeScript",
+    "JavaScript",
+    "SQL",
+    "Wordpress",
+    "Prestashop",
+    "Node.JS"
+  ];
+
   return (
     <main className="flex flex-col flex-grow justify-center items-center px-16">
       <div className="w-full mx-auto text-center md:w-11/12">
@@ -23,10 +56,27 @@ export default function Home() {
           >
             GitHub
           </Link>
+          <Link
+            className="inline-flex items-center px-5 py-3 text-sm font-medium text-gray-300 transition duration-300 bg-blue-900 rounded hover:bg-blue-700 dark:hover:bg-gray-200 dark:text-gray-700 dark:bg-white"
+            aria-label="learn more"
+            rel="noreferrer"
+            target="_blank" href={"www.linkedin.com/in/jonathan-la-mela-29119645"}
+          >
+            Linkedin
+          </Link>
           <br className="sm:hidden" />
         </div>
-        <div className="flex flex-col text-center mt-6 space-">
-          <h2 className="text-2xl">Applicazioni mobili</h2>
+        <div className="flex flex-col text-center mt-6">
+          <h2 className="text-2xl font-semibold">Skills</h2>
+          <div className="flex flex-row justify-center">
+            <div className="flex-wrap w-100 space-x-2 space-y-2">
+              {skills.map((skill: string) => <div key={skill} className="badge badge-ghost">{skill}</div>)}
+
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col text-center mt-6">
+          <h2 className="text-2xl font-semibold">Applicazioni mobili</h2>
           <div className="flex flex-row items-center justify-center space-x-4">
             <div className="card w-96 bg-base-100 card-md shadow-sm  h-50">
               <div className="card-body">
@@ -41,40 +91,18 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col text-center mt-6 space-">
-          <h2 className="text-2xl">Applicazioni web e siti</h2>
+          <h2 className="text-2xl font-semibold">Applicazioni web e siti</h2>
           <div className="flex flex-row items-center justify-center space-x-4">
-            <div className="card w-96 bg-base-100 card-md shadow-sm h-30">
-              <div className="card-body">
-                <h2 className="card-title">www.tonerfast24.it</h2>
-                <div className="justify-end card-actions">
-                  <Link className="btn btn-primary" href={"https://www.tonerfast24.it"}>Link</Link>
+            {webapps.map((site, index) => (
+              <div key={index} className="card w-96 bg-base-100 card-md shadow-sm h-30">
+                <div className="card-body">
+                  <h2 className="card-title justify-center">{site.title}</h2>
+                  <div className="justify-center card-actions">
+                    <Link className="btn btn-primary" href={site.link}>Link</Link>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="card w-96 bg-base-100 card-md shadow-sm h-30">
-              <div className="card-body">
-                <h2 className="card-title">www.ldc.it</h2>
-                <div className="justify-end card-actions">
-                  <Link className="btn btn-primary" href={"https://www.ldc.it"}>Link</Link>
-                </div>
-              </div>
-            </div>
-            <div className="card w-96 bg-base-100 card-md shadow-sm h-30">
-              <div className="card-body">
-                <h2 className="card-title">www.4deco.it</h2>
-                <div className="justify-end card-actions">
-                  <Link className="btn btn-primary" href={"https://www.4deco.it"}>Link</Link>
-                </div>
-              </div>
-            </div>
-            <div className="card w-96 bg-base-100 card-md shadow-sm h-30">
-              <div className="card-body">
-                <h2 className="card-title">www.imusicfun.it</h2>
-                <div className="justify-end card-actions">
-                  <Link className="btn btn-primary" href={"https://www.imusicfun.it"}>Link</Link>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
