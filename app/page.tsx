@@ -7,6 +7,7 @@ export default function Home() {
     { title: "www.ldc.it", link: "https://www.ldc.it" },
     { title: "www.4deco.it", link: "https://www.4deco.it" },
     { title: "www.imusicfun.it", link: "https://www.imusicfun.it" },
+    { title: "www.radioflash.fm", link: "https://www.radioflash.fm" },
   ];
 
   const skills = [
@@ -92,7 +93,7 @@ export default function Home() {
       </div>
       <div className="w-full flex flex-col space-y-4">
         <h2 className="text-2xl font-semibold text-center">Applicazioni web e siti</h2>
-        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:items-center md:justify-center md:space-x-4">
+        <div className="flex flex-col flex-wrap space-y-4 md:flex-row md:items-center md:justify-center md:space-x-4">
           {webapps.map((site, index) => (
             <div key={index} className="w-full md:w-1/4">
               <div className="card bg-base-200 card-md shadow-sm md:h-30">
