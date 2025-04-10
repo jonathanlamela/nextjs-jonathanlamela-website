@@ -84,7 +84,7 @@ export default function Home() {
               <h2 className="card-title">CrittoUtil</h2>
               <p>App a scopo didattico che si comporta come una calcolatrice per operazioni crittografiche come conversioni e simili.</p>
               <div className="justify-end card-actions">
-                <Link className="btn btn-primary" href={""}>Google Playstore</Link>
+                <Link className="btn btn-primary" href={"https://play.google.com/store/apps/details?id=com.jonathanlamela.crittoutil&hl=it"}>Google Playstore</Link>
                 <Link className="btn btn-secondary" href={"./privacy-policy/crittoutil"}>Privacy Policy App</Link>
               </div>
             </div>
