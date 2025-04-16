@@ -9,9 +9,13 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
+import { useTheme } from "@/context/theme-context";
 
 export default function Experience() {
   const { ref } = useSectionInView("Esperienze");
+  const { theme } = useTheme();
+
+  console.log(theme)
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
@@ -22,7 +26,7 @@ export default function Experience() {
             <VerticalTimelineElement
               contentStyle={{
                 background:
-                  "#f3f4f6",
+                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
                 boxShadow: "none",
                 border: "1px solid rgba(0, 0, 0, 0.05)",
                 textAlign: "left",
@@ -30,13 +34,15 @@ export default function Experience() {
               }}
               contentArrowStyle={{
                 borderRight:
-                  "0.4rem solid #9ca3af",
+                  theme === "light"
+                    ? "0.4rem solid #9ca3af"
+                    : "0.4rem solid rgba(255, 255, 255, 0.5)",
               }}
               date={item.date}
               icon={item.icon}
               iconStyle={{
                 background:
-                  "white",
+                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
                 fontSize: "1.5rem",
               }}
             >

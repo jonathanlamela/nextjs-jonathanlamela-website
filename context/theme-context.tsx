@@ -33,17 +33,12 @@ export default function ThemeContextProvider({
   };
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
-
-    if (localTheme) {
-      setTheme(localTheme);
-
-      if (localTheme === "dark") {
+    if (typeof window !== 'undefined') {
+      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (isDarkMode) {
+        setTheme("dark");
         document.documentElement.classList.add("dark");
       }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
     }
   }, []);
 

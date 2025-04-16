@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ThemeContextProvider from "@/context/theme-context";
 
 
 
@@ -18,7 +19,10 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
 
       <body>
-        {children}
+        <ThemeContextProvider>
+          {children}
+        </ThemeContextProvider>
+
       </body>
     </html>
   );
