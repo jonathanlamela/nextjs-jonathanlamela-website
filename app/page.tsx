@@ -27,7 +27,7 @@ export default function Home() {
     <>
 
       <div
-        className={`${inter.className} bg-gradient-to-tr text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
+        className={`${inter.className} bg-gradient-to-t from-slate-100 to-pink-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
 
 
