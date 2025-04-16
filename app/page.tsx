@@ -1,8 +1,72 @@
-import Link from "next/link";
+import About from "@/components/about";
+import Contact from "@/components/contact";
+import Experience from "@/components/experience";
+import Header from "@/components/header";
+import Intro from "@/components/intro";
+import Projects from "@/components/projects";
+import SectionDivider from "@/components/section-divider";
+import Skills from "@/components/skills";
+
+
+import { Inter } from "next/font/google";
+
+import { IS_GTM_ENABLED } from "@/src/libs/tracking/config.tracking";
+import { GoogleTagManager } from "@/src/components/tracking/GoogleTagManager";
+import CookieConsentBanner from "@/src/components/tracking/CookieConsentBanner";
+import ThemeContextProvider from "@/context/theme-context";
+import ActiveSectionContextProvider from "@/context/active-section-context";
+import Footer from "@/components/footer";
+import { Toaster } from "react-hot-toast";
+import ThemeSwitch from "@/components/theme-switch";
+
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 
-  const webapps = [
+
+
+  return (
+    <>
+
+      <div
+        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
+      >
+
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <Header />
+            <main className="flex flex-col items-center px-4">
+              <Intro />
+              <SectionDivider />
+              <About />
+              <Projects />
+              <Skills />
+              <Experience />
+              <Contact />
+            </main>
+            {IS_GTM_ENABLED && <GoogleTagManager />}
+            <CookieConsentBanner></CookieConsentBanner>
+            <Footer />
+
+            <Toaster position="top-right" />
+            <ThemeSwitch />
+          </ActiveSectionContextProvider>
+        </ThemeContextProvider>
+
+
+
+      </div>
+
+    </>
+
+  );
+}
+
+
+/**
+ *
+ const webapps = [
     { title: "www.tonerfast24.it", link: "https://www.tonerfast24.it" },
     { title: "www.ldc.it", link: "https://www.ldc.it" },
     { title: "www.4deco.it", link: "https://www.4deco.it" },
@@ -34,10 +98,7 @@ export default function Home() {
     "Prestashop",
     "Node.JS"
   ];
-
-  return (
-    <main className="flex flex-col flex-grow md:justify-center items-center p-4 md:p-16 space-y-8">
-      <div className="w-full flex flex-col space-y-4">
+ <div className="w-full flex flex-col space-y-4">
         <h1 className="text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-gray-100 md:text-6xl">
           Jonathan La Mela
           <br />
@@ -115,8 +176,5 @@ export default function Home() {
         </div>
 
       </div>
-    </main>
-  );
-}
-
-
+ *
+ */
