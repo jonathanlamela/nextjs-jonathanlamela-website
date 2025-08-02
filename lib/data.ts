@@ -105,7 +105,7 @@ export const projectsData = [
       "Applicazione Android demo realizzata con Flutter.",
     tags: ["Flutter"],
 
-    link: "https://github.com/jonathanlamela/crittoutil"
+    link: "https://github.com/jonathanlamela/flutter-crittoutil"
   },
   {
     title: "Tonerfast24",
