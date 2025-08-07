@@ -14,6 +14,10 @@ export const links = [
     hash: "#about",
   },
   {
+    name: "Servizi",
+    hash: "#services",
+  },
+  {
     name: "Progetti",
     hash: "#projects",
   },
@@ -38,7 +42,7 @@ export const experiencesData = [
     description:
       "Gestione di database relazionali con MySQL, automazione con Python e Go, pubblicazione su marketplace europei. Coordinamento di microservizi e web app distribuiti con Docker.",
     icon: React.createElement(CgWorkAlt),
-    date: "gen 2023 - feb 2025",
+    date: "gen 2023 - oggi",
   },
   {
     title: "Formatore di software",

@@ -15,6 +15,7 @@ import { GoogleTagManager } from "@/src/components/tracking/GoogleTagManager";
 import CookieConsentBanner from "@/src/components/tracking/CookieConsentBanner";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
+import Services from "@/components/services";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -37,6 +38,7 @@ export default function Home() {
             <Intro />
             <SectionDivider />
             <About />
+            <Services />
             <Projects />
             <Skills />
             <Experience />
