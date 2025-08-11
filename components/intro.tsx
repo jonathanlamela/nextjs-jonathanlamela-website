@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaGithubSquare, FaInstagram } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
@@ -66,35 +66,49 @@ export default function Intro() {
           delay: 0.1,
         }}
       >
-        <Link
-          href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-          onClick={() => {
-            setActiveSection("Contattami");
-            setTimeOfLastClick(Date.now());
-          }}
-        >
-          Contattami{" "}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-        </Link>
+        <div className="flex flex-col space-y-4">
+          <div className="flex">
+            <Link
+              href="#contact"
+              className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+              onClick={() => {
+                setActiveSection("Contattami");
+                setTimeOfLastClick(Date.now());
+              }}
+            >
+              Contattami{" "}
+              <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+            </Link>
+          </div>
 
+          <div className="flex flex-row space-x-2">
+            <a
+              className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+              href="https://www.linkedin.com/in/jonathan-la-mela-29119645/"
+              target="_blank"
+            >
+              <BsLinkedin />
+            </a>
 
-        <a
-          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://www.linkedin.com/in/jonathan-la-mela-29119645/"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
+            <a
+              className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+              href="https://github.com/jonathanlamela"
+              target="_blank"
+            >
+              <FaGithubSquare />
+            </a>
 
-        <a
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://github.com/jonathanlamela"
-          target="_blank"
-        >
-          <FaGithubSquare />
-        </a>
+            <a
+              className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+              href="https://www.instagram.com/jonathanlamela_dev/"
+              target="_blank"
+            >
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
+
       </motion.div>
-    </section>
+    </section >
   );
 }
